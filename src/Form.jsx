@@ -35,7 +35,9 @@ const Form = () => {
   };
 
   return (
+    
     <div className="container my-5">
+      <input type="search" name="" id="" />
       <h1>Form-Json</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
