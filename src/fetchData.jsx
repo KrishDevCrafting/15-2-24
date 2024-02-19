@@ -1,39 +1,39 @@
-import React, { useState, useEffect } from 'react';
-
-const MyComponent = () => {
-  const [data, setData] = useState([]);
+import React, { useEffect } from "react";
+const Mycomponent = () => {
+  const [data, setdata] = React.useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const main = async () => {
       try {
-        const response = await fetch('http://localhost:7000/Empolyees');
-        const jsonData = await response.json();
-        setData(jsonData);
-      } catch (error) {
-        console.error('Error fetching data:', error);
+        const response = await fetch("http://localhost:7000/Empolyees");
+        const add = await response.json();
+        setdata(add);
+      } catch (err) {
+        console.error("Error", err);
       }
     };
-
-    fetchData();
+    main();
   }, []);
 
   return (
-    <div>
-      <h1>Data from JSON</h1>
-      <ul>
-        {data.map((item, index) => (
-          <table className='table-bordered'>
-          <tr>
-          <th>{item.name}{item.position}</th></tr></table>
-        ))}
-      </ul>
-    </div>
+    <>
+      <h1>Hello-Json</h1>
+
+      <div>
+        <ul>
+          {data.map((e, index) => (
+            <li key={index}>
+              {e.id}
+              {e.department}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 
-export default MyComponent;
-
-
+export default Mycomponent;
 
 // import react, {useState,Effect} from "react"
 // const Mycomponent = ()=>{
@@ -48,8 +48,6 @@ export default MyComponent;
 // }catch(err){
 //     consol.error("There is the Error..!")
 
-
-    
 // }
 // };
 
@@ -58,23 +56,17 @@ export default MyComponent;
 
 // []);
 
-
-
-
-  
 //   return<>
- 
-  
+
 //   <ul>
-    
+
 //     {data.map((e,index)=>(
 // <li key={index}>
 //   {e.name}
 // </li>
-      
+
 //     ))</ul>)}
-  
-  
+
 //   </>
 // }
 
