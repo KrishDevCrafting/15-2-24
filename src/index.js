@@ -1,22 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Form from "./Form";
-import App from "./ChatGpt";
+// import App from "./ChatGpt";
 import Work from "./Dynamic";
 import MyComponent from "./fetchData";
 import Fetch from "./ArrList";
 import FormComponent from "./Object";
 import Count from "./Count";
+import TakeData from "./Test";
+import App from "./Hod";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-   <Count/>
-    <Fetch/>
-  <MyComponent/>
+    <App />
+    <TakeData />
+    <Count />
+    <Fetch />
+    <MyComponent />
     <Work />
     <Form />
     <App />
-    <FormComponent/>
+    <FormComponent />
   </React.StrictMode>
 );
 
