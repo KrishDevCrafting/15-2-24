@@ -1,25 +1,30 @@
-import React from "react"
-const Example = ()=>{
-const [data,setdata] = React.useState()
+import React from "react";
 
-const MyComponent = ({name})=>{
-<h1>Dynamic-text:{name}</h1>
-}
+// Define a higher-order component
+const withDynamicValue = (WrappedComponent, initialValue) => {
+  // Return a new component
+  return (props) => {
+    // Set up state to manage dynamic value
+    const [data, setData] = React.useState(initialValue);
 
-const Hod = (props)=>{
-return <h1>
-    {props.name}
-</h1>
+    // Render the WrappedComponent with the dynamic value
+    return <WrappedComponent {...props} data={data} setData={setData} />;
+  };
+};
 
-}
+// Define a simple component
+const MyComponent = ({ data, setData }) => {
+  // Update the data state when the component mounts
+  React.useEffect(() => {
+    setData("Updated value");
+  }, [setData]);
 
-const Mycomponent2 =()=>{
-    return<>
-    
-    </>
-}
-return<>
-</>
-}
+  // Render the dynamic value
+  return <h1>This is the Dynamic Value: {data}</h1>;
+};
 
-export default Example
+// Enhance MyComponent with the higher-order component
+const Complex = withDynamicValue(MyComponent, "Initial value");
+
+// Export the enhanced component
+export default Complex;

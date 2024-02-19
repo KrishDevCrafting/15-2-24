@@ -29,6 +29,7 @@ function Input() {
       <h1 className={textColor}>{inputValue}</h1>
     </div>
   );
+  
 }
 
 export default Input;

@@ -9,9 +9,11 @@ import FormComponent from "./Object";
 import Count from "./Count";
 import TakeData from "./Test";
 import App from "./Hod";
+import Complex from "./KrishHod";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <Complex />
     <App />
     <TakeData />
     <Count />
